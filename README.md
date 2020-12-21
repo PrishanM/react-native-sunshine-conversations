@@ -1,7 +1,7 @@
 # react-native-smooch
 React Native wrapper for Smooch.io. Based off of [smooch-cordova](https://github.com/smooch/smooch-cordova)
 
-This React Native module was built and tested with version 0.62.2 of React Native. Since React Native is not mature yet, there might be some breaking changes which will break our module. Therefore, if you find a problem, please open an issue.
+This React Native module was built and tested with version **0.62.2** of React Native. Since React Native is not mature yet, there might be some breaking changes which will break our module. Therefore, if you find a problem, please open an issue.
 
 At the moment, this wrapper only covers the most commonly used features of the Smooch SDK. We encourage you to add to this wrapper or make any feature requests you need. Pull requests most definitely welcome!
 
@@ -14,16 +14,16 @@ First, make sure you've [signed up for Smooch](https://app.smooch.io/signup)
 
 If you don't already have a React Native application setup, follow the instructions [here](https://facebook.github.io/react-native/docs/getting-started.html) to create one.
 
-Next, grab this React Native module with `npm install @PrishanM/react-native-smooch`
+Next, grab this React Native module with `npm install @prishanm/react-native-smooch`
 
-Link it! `react-native link @PrishanM/react-native-smooch`
+Link it! `react-native link @prishanm/react-native-smooch`
 
 ## iOS
- * With CococaPods, you can add the react-native-smooch Pod in your `Podfile` like so:
+ * With CococaPods, you can add the @prishanm/react-native-smooch Pod in your `Podfile` like so:
 
  ```
  pod 'react-native-smooch',
-     :path => '../node_modules/@PrishanM/react-native-smooch'
+     :path => '../node_modules/@prishanm/react-native-smooch'
  ```
 
  * You must also have your React dependencies defined in your Podfile as described [here](http://facebook.github.io/react-native/releases/0.31/docs/troubleshooting.html#missing-libraries-for-react), for example:
@@ -32,7 +32,7 @@ Link it! `react-native link @PrishanM/react-native-smooch`
 target 'myapp' do
 
     pod 'react-native-smooch',
-        :path => '../node_modules/@PrishanM/react-native-smooch'
+        :path => '../node_modules/@prishanm/react-native-smooch'
 
 	pod 'React',
         :subspecs => [
@@ -72,7 +72,7 @@ You're now ready to start interacting with Smooch in your React Native app.
 
 ## Android
 
-NOTE - This is a wrapper which supoorts android 29 as well
+**_NOTE - This is a wrapper which supoorts android 29 as well_**
 
 You can easily add a binding to the [Smooch Android SDK](https://github.com/smooch/smooch-android) in your React Native application by following the instructions below.
 
@@ -123,7 +123,7 @@ Using Smooch in your React Native App
 
 ### Require the module
 ```javascript
-import Smooch from '@PrishanM/react-native-smooch';
+import Smooch from '@prishanm/react-native-smooch';
 ```
 
 ### Show the conversation screen
