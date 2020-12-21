@@ -1,7 +1,7 @@
 # react-native-smooch
 React Native wrapper for Smooch.io. Based off of [smooch-cordova](https://github.com/smooch/smooch-cordova)
 
-This React Native module was built and tested with version 0.57.7 of React Native. Since React Native is not mature yet, there might be some breaking changes which will break our module. Therefore, if you find a problem, please open an issue.
+This React Native module was built and tested with version 0.62.2 of React Native. Since React Native is not mature yet, there might be some breaking changes which will break our module. Therefore, if you find a problem, please open an issue.
 
 At the moment, this wrapper only covers the most commonly used features of the Smooch SDK. We encourage you to add to this wrapper or make any feature requests you need. Pull requests most definitely welcome!
 
@@ -72,6 +72,8 @@ You're now ready to start interacting with Smooch in your React Native app.
 
 ## Android
 
+NOTE - This is a wrapper which supoorts android 29 as well
+
 You can easily add a binding to the [Smooch Android SDK](https://github.com/smooch/smooch-android) in your React Native application by following the instructions below.
 
 * Add the `ReactNativeSmoochPackage` to the list of packages in your `ReactApplication`
@@ -88,9 +90,11 @@ protected List<ReactPackage> getPackages() {
 * Add `Smooch.init` to the `onCreate` method of your `Application` class.
 
 ```java
+import com.prishanm.rnsmooch.ReactNativeSmoochPackage;
 import io.smooch.core.Settings;
 import io.smooch.core.Smooch;
 import io.smooch.core.SmoochCallback;
+import io.smooch.core.service.SmoochService;
 import com.facebook.soloader.SoLoader;
 
 public class MainApplication extends Application implements ReactApplication {
@@ -99,12 +103,14 @@ public class MainApplication extends Application implements ReactApplication {
     public void onCreate() {
         super.onCreate();
         SoLoader.init(this, /* native exopackage */ false);
-        Smooch.init(this, new Settings("YOUR_APP_ID"), new SmoochCallback() {
-            @Override
-            public void run(Response response) {
-                // Your code after init is complete
-            }
-        });
+
+        /**** PLEASE USE ANDROID APP INTEGRATION ID HERE INSTEAD APP_ID ****/
+        Smooch.init(this, new Settings("APP_INTEGRATION_ID"), new SmoochCallback() {
+                  @Override
+                  public void run(Response response) {
+                      // Your code after init is complete
+                  }
+            });
     }
     ...
 }
@@ -117,7 +123,7 @@ Using Smooch in your React Native App
 
 ### Require the module
 ```javascript
-const Smooch = require('react-native-smooch');
+import Smooch from '@PrishanM/react-native-smooch';
 ```
 
 ### Show the conversation screen

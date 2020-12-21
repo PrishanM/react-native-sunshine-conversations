@@ -1,4 +1,4 @@
-package com.smooch.rnsmooch;
+package com.prishanm.rnsmooch;
 
 import android.content.Intent;
 
@@ -62,12 +62,13 @@ public class ReactNativeSmooch extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void show() {
-        ConversationActivity.show(getReactApplicationContext(), Intent.FLAG_ACTIVITY_NEW_TASK);
+        //ConversationActivity.show(getReactApplicationContext(), Intent.FLAG_ACTIVITY_NEW_TASK);
+        ConversationActivity.builder().show(getCurrentActivity());
     }
 
     @ReactMethod
     public void close() {
-        ConversationActivity.close();
+        //ConversationActivity.close();
     }
 
     @ReactMethod

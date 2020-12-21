@@ -1,4 +1,4 @@
-package com.smooch.rnsmooch;
+package com.prishanm.rnsmooch;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
@@ -18,12 +18,12 @@ public class ReactNativeSmoochPackage implements ReactPackage {
         modules.add(new ReactNativeSmooch(reactContext));
         return modules;
     }
-  
+
     // Deprecated in React Native 0.47
     public List<Class<? extends JavaScriptModule>> createJSModules() {
         return Collections.emptyList();
     }
-  
+
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
         return new ArrayList<>();
