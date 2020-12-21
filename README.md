@@ -14,11 +14,19 @@ First, make sure you've [signed up for Smooch](https://app.smooch.io/signup)
 
 If you don't already have a React Native application setup, follow the instructions [here](https://facebook.github.io/react-native/docs/getting-started.html) to create one.
 
-Next, grab this React Native module with `npm install @prishanm/react-native-smooch`
+Next, grab this React Native module with `yarn add @prishanm/react-native-smooch`
+
+## **_react-native version >= 0.60_**
+
+If you are using react-native version >= 0.60, no need to link. It will automatically link the resources. But in iOS go to ios directory and run the command `pod install`
+
+## **_react-native version >= 0.59_**
+
+#### Automatic
 
 Link it! `react-native link @prishanm/react-native-smooch`
 
-## iOS
+#### iOS - Manual
  * With CococaPods, you can add the @prishanm/react-native-smooch Pod in your `Podfile` like so:
 
  ```
@@ -70,22 +78,11 @@ end
 
 You're now ready to start interacting with Smooch in your React Native app.
 
-## Android
+#### Android - Manual
 
 **_NOTE - This is a wrapper which supoorts android 29 as well_**
 
 You can easily add a binding to the [Smooch Android SDK](https://github.com/smooch/smooch-android) in your React Native application by following the instructions below.
-
-* Add the `ReactNativeSmoochPackage` to the list of packages in your `ReactApplication`
-```java
-@Override
-protected List<ReactPackage> getPackages() {
-    return Arrays.<ReactPackage>asList(
-            new MainReactPackage(),
-            new ReactNativeSmoochPackage()
-    );
-}
-```
 
 * Add `Smooch.init` to the `onCreate` method of your `Application` class.
 
